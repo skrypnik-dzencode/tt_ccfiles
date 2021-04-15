@@ -27,6 +27,7 @@
 
 #### Deploy project
 Go to working directory
+
 0. ```git clone https://github.com/skrypnik-dzencode/tt_ccfiles.git .```
 1. ```composer install```
 2. ```cp .env.example .env```
@@ -46,6 +47,7 @@ Go to working directory
 ### *Also you can use docker-compose**
 #### Deploy project with docker**
 Go to working directory
+
 0. ```git clone https://github.com/skrypnik-dzencode/tt_ccfiles.git .```
 1. ```cd docker```
 2. ```docker-compose up -d --build```
