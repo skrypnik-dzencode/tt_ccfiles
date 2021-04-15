@@ -26,6 +26,8 @@
 [файл архива задания](testovoe.zip)
 
 #### Deploy project
+Go to working directory
+0. ```git clone https://github.com/skrypnik-dzencode/tt_ccfiles.git .```
 1. ```composer install```
 2. ```cp .env.example .env```
 3. ```vim .env``` to setup environment
@@ -40,3 +42,28 @@
 - ```php artisan convert:countries -I countries.json -O countries.xml``` convert command with shortcuts (inline way)
 - ```php artisan convert:countries-i``` convert command via interactive mode
 
+
+### *Also you can use docker-compose**
+#### Deploy project with docker**
+Go to working directory
+0. ```git clone https://github.com/skrypnik-dzencode/tt_ccfiles.git .```
+1. ```cd docker```
+2. ```docker-compose up -d --build```
+3. ```docker-compose run --rm composer install```
+4. ```cp ../.env.example ../.env```
+5. ```vim ../.env``` to setup environment
+6. ```docker-compose run --rm fpm php artisan key:generate```
+7. ```docker-compose run --rm npm install```
+8. ```docker-compose run --rm npm run dev```
+9. ```docker-compose run --rm fpm php artisan storage:link```
+
+##### artisan commands
+- ```docker-compose run --rm fpm php artisan test``` to run tests
+- ```docker-compose run --rm fpm php artisan list | grep convert``` to show convert commands
+- ```docker-compose run --rm fpm php artisan convert:countries --input-file=countries.json --output-file=countries.xml``` convert command (inline way)
+- ```docker-compose run --rm fpm php artisan convert:countries -I countries.json -O countries.xml``` convert command with shortcuts (inline way)
+- ```docker-compose run --rm fpm php artisan convert:countries-i``` convert command via interactive mode
+
+*Install docker-compose first
+
+**It is a draft version for this project

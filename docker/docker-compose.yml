@@ -1,0 +1,61 @@
+version: "3"
+
+networks:
+  laravel:
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/nginx.dockerfile
+    ports:
+      - 80:80
+    links:
+      - fpm
+    volumes:
+      - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
+    working_dir: ${APP_PATH_CONTAINER}
+    networks:
+      - laravel
+  fpm:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/fpm.dockerfile
+    volumes:
+      - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
+    links:
+      - mysql
+    working_dir: ${APP_PATH_CONTAINER}
+    ports:
+      - 9000:9000
+    networks:
+      - laravel
+  mysql:
+    image: mysql
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - ${DB_PATH_HOST}:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+    networks:
+      - laravel
+  composer:
+    image: composer
+    volumes:
+      - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
+    working_dir: ${APP_PATH_CONTAINER}
+    entrypoint: ['composer', '--ignore-platform-reqs']
+    networks:
+      - laravel
+  npm:
+    image: node:14
+    container_name: npm
+    volumes:
+      - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
+    working_dir: ${APP_PATH_CONTAINER}
+    entrypoint: [ 'npm' ]
+    networks:
+      - laravel
