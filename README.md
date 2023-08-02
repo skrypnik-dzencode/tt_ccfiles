@@ -39,9 +39,9 @@ display its content on the screen, edit and download the modified version in any
 #### Requirements:
 1. Main page has a form to upload the file
 2. After uploading, the interface for editing the list appears. It allows you to:
-    - а. Add data
-    - б. Change data
-    - в. Delete data
+    - a. Add data
+    - b. Change data
+    - c. Delete data
 3. There is a "download" button on the page and a dropdown to choosing the file format: json, csv, xml
 4. It is known that new formats will be added soon, but there is no information about which ones
 5. You should to use Laravel and Vue.js / jquery / js
