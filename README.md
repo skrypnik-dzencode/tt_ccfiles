@@ -1,29 +1,64 @@
-## **Задание**
+<details>
+  <summary>Українською</summary>
 
-Есть три типа файлов (json, csv, xml), в которых перечислены страны и их столицы. Необходимо разработать интерфейс, с помощью которого можно было бы загружать
-этот файл, выводить его содержимое на экран, редактировать и скачивать отредактированный вариант в любом из вышеперечисленных форматов.
-#### Основные требования:
-1. Главная страница содержит форму загрузки файлов
-2. После успешной загрузки отображается интерфейс редактирования списка, который позволяет:
-   - а. Добавлять данные
-   - б. Изменять данные
-   - в. Удалять данные
-3. На странице редактирования находится кнопка "скачать" и выбор формата для скачивания в виде дропдауна с вариантами (json, csv, xml)
-4. Известно, что вскоре будут добавлены новые форматы данных, однако нет информации какие именно
-5. В качестве инструментов используем Laravel и Vue.js/jquery/js
-6. *Написать Unit тесты
-7. *Написать консольную команду, которая будет конвертировать списки из одного формата в другой.
-Например "php artisan convert:countries --input-file=countries.xml --output-file=countries.json"
-   
-#### Критерии оценки:
-1. Масштабируемость кода
-2. Читабельность кода
-3. *Тестируемость кода
+## **Завдання**
 
-Примеры файлов прилагаются
-*Пункты со звёздочкой не обязательны
+Є три типи файлів: json, csv, xml, зміст яких - країни та столиці. Необхіднео розробити інтерфейс, за допомогою якого можливо завантажити один із файлів,
+вивести його зміст на екран, редагувати і викачати змінений варіант у будьякому із зазначених форматів.
+#### Основні вимоги:
+1. Головна сторінка має форму загрузки файлів
+2. Після завантаження зʼявляється інтерфейс редагування списку, що дозволяє:
+    - а. Додавати дані
+    - б. Змінбвати дані
+    - в. Видаляти дані
+3. На сторінці знаходиться кнопка "download" і вибор формату файлу у вигляді дропдауну з варіантами: json, csv, xml
+4. Відомо, що незабаром будуть додані нові формати, але нема інформації які саме
+5. Використовувати Laravel і Vue.js / jquery / js
+6. *Додати Unit тести
+7. *Додати консольну команду, що буде конвертувати списки з одного формату в інший.
+   Наприклад "php artisan convert:countries --input-file=countries.xml --output-file=countries.json"
 
-[файл архива задания](testovoe.zip)
+#### Критерії оцінки:
+1. Можливість масштабування коду
+2. Читабельність коду
+3. *Тестування коду
+
+Приклади файлів додаються<br>
+*Пункти із зірочкою не обовʼязкові
+
+[файли архіву завдання](testovoe.zip)
+</details>
+
+<details>
+  <summary>English</summary>
+
+## **Test task**
+
+There are three types of files: json, csv, xml with list of countries and capitals. You need to develop an interface to upload one of the files,
+display its content on the screen, edit and download the modified version in any of the specified formats.
+#### Requirements:
+1. Main page has a form to upload the file
+2. After uploading, the interface for editing the list appears. It allows you to:
+    - а. Add data
+    - б. Change data
+    - в. Delete data
+3. There is a "download" button on the page and a dropdown to choosing the file format: json, csv, xml
+4. It is known that new formats will be added soon, but there is no information about which ones
+5. You should to use Laravel and Vue.js / jquery / js
+6. *Unit tests
+7. *Console command to convert format from one to another.
+   Example "php artisan convert:countries --input-file=countries.xml --output-file=countries.json"
+
+#### Evaluation criteria:
+1. Scalability
+2. Readability
+3. *Testability
+
+Example files are attached<br>
+*Points with an asterisk are optional
+
+[task archive files](testovoe.zip)
+</details>
 
 #### Deploy project
 Go to working directory
